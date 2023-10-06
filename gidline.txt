@@ -1,0 +1,4 @@
+This project was created using the npm.
+This project was created using the tailwindcss.
+
+start your project commend : npm run dev
