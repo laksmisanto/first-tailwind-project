@@ -4,6 +4,19 @@ import { BiChevronRight } from "react-icons/bi";
 import { FaUserGraduate } from "react-icons/fa";
 import { GiOpenBook } from "react-icons/gi";
 
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
 export default function Home() {
   return (
     <>
@@ -19,9 +32,48 @@ export default function Home() {
                 pariatur cupiditate tenetur aperiam. Sed, alias! Lorem ipsum
                 dolor sit amet consectetur adipisicing elit. Eligendi, aliquid?
               </p>
-              <button className="font-roboto font-bold uppercase text-base lg:text-xl mt-10 px-6 py-3 lg:px-10 lg:py-5 bg-[#FF5202] transition ease-in-out duration-300 hover:bg-[#0D1028]  text-slate-50">
-                contact us
-              </button>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="font-roboto font-bold uppercase text-base lg:text-xl mt-10 px-6 py-3 lg:px-10 lg:py-5 bg-[#FF5202] transition ease-in-out duration-300 hover:bg-[#0D1028]  text-slate-50">
+                    contact us
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                  <DialogHeader>
+                    <DialogTitle>Edit profile</DialogTitle>
+                    <DialogDescription>
+                      Make changes to your profile here. Click save when youre
+                      done.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="grid gap-4 py-4">
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="name" className="text-right">
+                        Name
+                      </Label>
+                      <Input
+                        id="name"
+                        defaultValue="Pedro Duarte"
+                        className="col-span-3"
+                      />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="username" className="text-right">
+                        Username
+                      </Label>
+                      <Input
+                        id="username"
+                        defaultValue="@peduarte"
+                        className="col-span-3"
+                      />
+                    </div>
+                  </div>
+                  <DialogFooter>
+                    <Button type="submit">Save changes</Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         </div>
